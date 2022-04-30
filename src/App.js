@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import Inventory from './components/Inventory/Inventory';
 import Login from './components/Auth/Login/Login';
 import SignUp from './components/Auth/SignUp/SignUp';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 
 function App() {
   return (
@@ -13,7 +14,9 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='/inventory' element={<RequiredAuth>
+          <Inventory></Inventory>
+        </RequiredAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>

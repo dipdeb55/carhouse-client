@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useCars from '../../Hooks/useCars/useCars';
 import Item from '../Item/Item';
 import './Items.css'
 
 const Items = () => {
-    const [cars, setCars] = useState([]);
+    const [cars, setCars] = useCars([]);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/cars')
-            .then(res => res.json())
-            .then(data => setCars(data))
-    }, [])
     return (
         <div className='car-container mt-5'>
             {

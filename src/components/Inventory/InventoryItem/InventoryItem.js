@@ -1,11 +1,8 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
 
-const Item = ({ car }) => {
-    const { _id, name, image, description, price, quantity, supplierName } = car;
-    const navigate = useNavigate();
-
+const InventoryItem = ({ car }) => {
+    const { name, image, description, price, quantity, supplierName } = car;
     return (
         <div className='mx-auto'>
             <Card style={{ width: '18rem' }}>
@@ -15,11 +12,12 @@ const Item = ({ car }) => {
                         <Card.Title>{name}</Card.Title>
                         <Card.Title>{price}</Card.Title>
                     </div>
+                    <Card.Title>Supplier: {supplierName}</Card.Title>
                     <Card.Text>
                         {description}
                     </Card.Text>
                     <div className='d-flex justify-content-between'>
-
+                        <Button variant="primary" >Delivered</Button>
                     </div>
                 </Card.Body>
             </Card>
@@ -27,4 +25,4 @@ const Item = ({ car }) => {
     );
 };
 
-export default Item;
+export default InventoryItem;

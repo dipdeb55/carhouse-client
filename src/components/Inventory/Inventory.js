@@ -1,11 +1,19 @@
 import React from 'react';
-import Items from '../Home/Items/Items';
+import Item from '../Home/Item/Item';
+import useCars from '../Hooks/useCars/useCars';
+import InventoryItem from './InventoryItem/InventoryItem';
 
 const Inventory = () => {
+    const [cars, setCars] = useCars([]);
+
     return (
-        <div>
-            <h1>Inventory</h1>
-            <Items></Items>
+        <div className='car-container mt-5'>
+            {
+                cars.map(car => <InventoryItem
+                    key={cars._id}
+                    car={car}
+                ></InventoryItem>)
+            }
         </div>
     );
 };
