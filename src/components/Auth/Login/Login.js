@@ -1,14 +1,16 @@
 import { sendPasswordResetEmail } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import useCars from '../../Hooks/useCars/useCars';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const [cars, setCars] = useCars({})
 
 
     const [
@@ -40,7 +42,7 @@ const Login = () => {
     }
 
     if (user) {
-        navigate('/')
+        navigate(`/inventory`)
     }
 
     return (
@@ -62,6 +64,12 @@ const Login = () => {
                 <Button onClick={() => signInWithEmailAndPassword(email, password)} variant="primary" type="submit">
                     Log in
                 </Button>
+                {/* {
+                    cars.map(car => <p
+                        key={cars._id}
+                        car={car}
+                    ></p>)
+                } */}
             </Form>
         </div>
     );

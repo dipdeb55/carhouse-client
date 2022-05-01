@@ -15,6 +15,7 @@ const Item = ({ car }) => {
                         <Card.Title>{name}</Card.Title>
                         <Card.Title>{price}</Card.Title>
                     </div>
+                    <p>Supplier:{supplierName}</p>
                     <Card.Text>
                         {description}
                     </Card.Text>

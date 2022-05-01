@@ -7,6 +7,8 @@ import Inventory from './components/Inventory/Inventory';
 import Login from './components/Auth/Login/Login';
 import SignUp from './components/Auth/SignUp/SignUp';
 import RequiredAuth from './components/RequiredAuth/RequiredAuth';
+import Update from './components/Inventory/Update/Update';
+import ManageInventory from './components/Manage Inventory/ManageInventory';
 
 function App() {
   return (
@@ -14,11 +16,11 @@ function App() {
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path='/inventory' element={<RequiredAuth>
-          <Inventory></Inventory>
-        </RequiredAuth>}></Route>
+        <Route path='/inventory' element={<Inventory></Inventory>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='/inventory/:id' element={<RequiredAuth><Update></Update></RequiredAuth>}></Route>
+        <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
       </Routes>
     </div>
   );
