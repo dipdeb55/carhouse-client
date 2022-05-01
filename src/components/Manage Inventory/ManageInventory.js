@@ -6,6 +6,24 @@ import { MdDelete } from "react-icons/md";
 
 const ManageInventory = () => {
     const [cars, setCars] = useCars([]);
+
+    const handleDelete = id => {
+        const proceed = window.confirm('You want to DELETE');
+        if (proceed) {
+            const url = `http://localhost:5000/cars/${id}`
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaining = cars.filter(car => car._id !== id);
+                        setCars(remaining)
+                    }
+                })
+        }
+    }
+
     return (
         <div>
             <h2>Manage Inventory</h2>
@@ -28,7 +46,7 @@ const ManageInventory = () => {
                                 <td>{car.name}</td>
                                 <td>{car.price}</td>
                                 <td>{car.supplierName}</td>
-                                <td><Button className='text-decoration-none' variant="link"> <MdDelete></MdDelete>  Delete</Button></td>
+                                <td><Button onClick={() => handleDelete(car._id)} className='text-decoration-none' variant="link"> <MdDelete></MdDelete>  Delete</Button></td>
                             </tr>
                         })
                     }
