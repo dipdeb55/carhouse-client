@@ -10,6 +10,7 @@ import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 import Update from './components/Inventory/Update/Update';
 import ManageInventory from './components/Manage Inventory/ManageInventory';
 import AddCars from './components/AddCars/AddCars';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/inventory/:id' element={<RequiredAuth><Update></Update></RequiredAuth>}></Route>
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/addCar' element={<AddCars></AddCars>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );

@@ -8,7 +8,8 @@ const Update = () => {
     const { id } = useParams();
     const [car, setCar] = useState({});
     const navigate = useNavigate();
-    const [quantity, setQuantity] = useState();
+    // const [quantity, setQuantity] = useState({});
+    const { quantity } = car;
 
     useEffect(() => {
         fetch(`http://localhost:5000/cars/${id}`)
@@ -17,26 +18,32 @@ const Update = () => {
     }, [])
 
 
+    const handleDelivered = () => {
 
-    // const handelDelivered = () => {
+        // // const newQuantity = quantity - 1;
+        // const newQuantity = {
+        //     quantity: car.quantity - 1,
+        // }
+        const newQuantity = (quantity - 1);
+        const updateQuantity = { ...car, quantity: newQuantity }
+        setCar(updateQuantity);
 
-    //     // // const newQuantity = quantity - 1;
-    //     // const newQuantity = {
-    //     //     quantity: car.quantity - 1,
-    //     // }
-    //     const newQuantity = 
 
+        fetch(`http://localhost:5000/cars/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
 
-    //     fetch(`http://localhost:5000/cars/${id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(newQuantity)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => setQuantity(data))
-    // }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                alert('item delivered')
+
+            })
+    }
 
     return (
         <div>
@@ -56,7 +63,7 @@ const Update = () => {
                             <p>Available:{car.quantity}</p>
                         </div>
                         <p>Supplier:{car.supplierName}</p>
-                        <Button variant="primary">Delivered</Button>
+                        <Button onClick={() => handleDelivered(car._id)} variant="primary">Delivered</Button>
                     </Card.Body>
                 </Card>
 

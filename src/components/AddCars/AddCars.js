@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 const AddCars = () => {
     const handleAddCars = e => {
         e.preventDefault();
+
         const name = e.target.name.value;
         const image = e.target.image.value;
         const description = e.target.description.value;
