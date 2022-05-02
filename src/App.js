@@ -9,6 +9,7 @@ import SignUp from './components/Auth/SignUp/SignUp';
 import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 import Update from './components/Inventory/Update/Update';
 import ManageInventory from './components/Manage Inventory/ManageInventory';
+import AddCars from './components/AddCars/AddCars';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='/inventory/:id' element={<RequiredAuth><Update></Update></RequiredAuth>}></Route>
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
+        <Route path='/addCar' element={<AddCars></AddCars>}></Route>
       </Routes>
     </div>
   );
