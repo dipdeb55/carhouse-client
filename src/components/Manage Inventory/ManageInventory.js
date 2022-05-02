@@ -1,11 +1,12 @@
 import React from 'react';
 import { Button, Table } from 'react-bootstrap';
 import useCars from '../Hooks/useCars/useCars';
-import ManageItems from './ManageItems/ManageItems';
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 const ManageInventory = () => {
     const [cars, setCars] = useCars([]);
+    const navigate = useNavigate();
 
     const handleDelete = id => {
         const proceed = window.confirm('You want to DELETE');
@@ -27,6 +28,9 @@ const ManageInventory = () => {
     return (
         <div>
             <h2>Manage Inventory</h2>
+            <div className='d-flex justify-content-end m-3'>
+                <Button variant="secondary" onClick={() => navigate('/addCar')}>Add Car</Button>
+            </div>
 
             <Table striped bordered hover>
                 <thead>
