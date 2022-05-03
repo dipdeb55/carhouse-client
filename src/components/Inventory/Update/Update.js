@@ -25,7 +25,6 @@ const Update = () => {
         // }
         const newQuantity = (quantity - 1);
         const updateQuantity = { ...car, quantity: newQuantity }
-        setCar(updateQuantity);
 
 
         fetch(`http://localhost:5000/cars/${id}`, {
@@ -39,9 +38,12 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                setCar(updateQuantity);
                 alert('item delivered')
 
+
             })
+        console.log(newQuantity)
     }
 
     return (

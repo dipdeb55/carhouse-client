@@ -76,12 +76,6 @@ const Login = () => {
                 <Button onClick={() => signInWithEmailAndPassword(email, password)} variant="primary" type="submit">
                     Log in
                 </Button>
-                {/* {
-                    cars.map(car => <p
-                        key={cars._id}
-                        car={car}
-                    ></p>)
-                } */}
             </Form>
         </div>
     );

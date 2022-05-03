@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -11,6 +10,7 @@ import Update from './components/Inventory/Update/Update';
 import ManageInventory from './components/Manage Inventory/ManageInventory';
 import AddCars from './components/AddCars/AddCars';
 import NotFound from './components/NotFound/NotFound';
+import Blogs from './components/Blogs/Blogs';
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path='/inventory/:id' element={<RequiredAuth><Update></Update></RequiredAuth>}></Route>
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/addCar' element={<AddCars></AddCars>}></Route>
+        <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
