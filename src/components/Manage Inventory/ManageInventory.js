@@ -3,6 +3,7 @@ import { Button, Table } from 'react-bootstrap';
 import useCars from '../Hooks/useCars/useCars';
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import './ManageInventory.css'
 
 const ManageInventory = () => {
     const [cars, setCars] = useCars([]);
@@ -39,6 +40,7 @@ const ManageInventory = () => {
                         <th>Name</th>
                         <th>Price</th>
                         <th>Supplier</th>
+                        <th>Sold</th>
                         <th><MdDelete></MdDelete></th>
                     </tr>
                 </thead>
@@ -46,10 +48,11 @@ const ManageInventory = () => {
                     {
                         cars.map(car => {
                             return <tr>
-                                <td>1</td>
+                                <td><img className='car-img' src={car.image} alt="" /></td>
                                 <td>{car.name}</td>
                                 <td>{car.price}</td>
                                 <td>{car.supplierName}</td>
+                                <td>{car.sold}</td>
                                 <td><Button onClick={() => handleDelete(car._id)} className='text-decoration-none' variant="link"> <MdDelete></MdDelete>  Delete</Button></td>
                             </tr>
                         })
