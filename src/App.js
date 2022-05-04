@@ -12,6 +12,7 @@ import AddCars from './components/AddCars/AddCars';
 import NotFound from './components/NotFound/NotFound';
 import Blogs from './components/Blogs/Blogs';
 import MyItems from './components/MyItems/MyItems';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -26,9 +27,10 @@ function App() {
         <Route path='/manageInventory' element={<ManageInventory></ManageInventory>}></Route>
         <Route path='/addCar' element={<AddCars></AddCars>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
-        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
+        <Route path='/cars/myitems' element={<MyItems></MyItems>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

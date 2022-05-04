@@ -11,15 +11,11 @@ const MyItems = () => {
     const [cars, setCars] = useState([])
 
     useEffect(() => {
-
-        const getCars = async () => {
-            const email = user?.email;
-            const url = `http://localhost:5000/myitems?=${email}`
-            const { data } = await axios.get(url);
-            setCars(data)
-        }
-        getCars();
-    }, [user]);
+        const email = user?.email;
+        fetch(`http://localhost:5000/cars/myitems?=${email}`)
+            .then(res => res.json())
+            .then(data => setCars(data))
+    }, [user])
 
     if (user) {
         console.log(user)
