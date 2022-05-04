@@ -23,9 +23,12 @@ const Update = () => {
         // const newQuantity = {
         //     quantity: car.quantity - 1,
         // }
-        const newQuantity = (quantity - 1);
-        const updateQuantity = { ...car, quantity: newQuantity }
+        const newQuantity = (parseInt(quantity) - 1);
+        const stringQuantity = `${newQuantity}`
+        // const stringQuantity = newQuantity.toString()
+        const updateQuantity = { ...car, quantity: stringQuantity }
 
+        console.log(JSON.stringify(updateQuantity))
 
         fetch(`http://localhost:5000/cars/${id}`, {
             method: 'PUT',
@@ -41,9 +44,8 @@ const Update = () => {
                 setCar(updateQuantity);
                 alert('item delivered')
 
-
             })
-        console.log(newQuantity)
+        console.log(stringQuantity)
     }
 
     return (
