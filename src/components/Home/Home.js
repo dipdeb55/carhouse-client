@@ -31,8 +31,7 @@ const Home = () => {
             </div>
 
             <Items></Items>
-            <Button className='my-3 d-flex justify-content-around mx-3' onClick={() => navigate('/manageInventory')} variant="secondary">Manage Inventory</Button>
-
+            <Button className='my-3 d-flex justify-content-center mx-3' onClick={() => navigate('/manageInventory')} variant="secondary">Manage Inventory</Button>
 
 
             <div className='d-flex justify-content-center align-items-center mt-5'>
