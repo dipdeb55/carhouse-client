@@ -8,7 +8,7 @@ const Update = () => {
     const [car, setCar] = useState({});
     const navigate = useNavigate();
     // const [quantity, setQuantity] = useState({});
-    const { quantity } = car;
+    // const { quantity } = car;
 
     useEffect(() => {
         fetch(`http://localhost:5000/cars/${id}`)
@@ -19,11 +19,7 @@ const Update = () => {
 
     const handleDelivered = () => {
 
-        // // const newQuantity = quantity - 1;
-        // const newQuantity = {
-        //     quantity: car.quantity - 1,
-        // }
-        const newQuantity = (parseInt(quantity) - 1);
+        const newQuantity = parseInt(car.quantity) - 1;
         const stringQuantity = `${newQuantity}`
         // const stringQuantity = newQuantity.toString()
         const updateQuantity = { ...car, quantity: stringQuantity }
@@ -45,7 +41,7 @@ const Update = () => {
                 alert('item delivered')
 
             })
-        console.log(stringQuantity)
+        // console.log(stringQuantity)
     }
 
     return (

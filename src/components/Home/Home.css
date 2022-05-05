@@ -9,3 +9,7 @@
     align-items: center;
     justify-content: space-around;
 }
+
+#services-container {
+    background-color: rgb(238, 238, 238);
+}
