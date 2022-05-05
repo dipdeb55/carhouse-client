@@ -8,8 +8,9 @@ const Home = () => {
     const navigate = useNavigate();
     return (
         <div>
-            <div className='banner-section'>
-                <h1 className='right-12' >What are you looking for? </h1>
+            <div className='banner-section d-flex fw-bold'>
+                <h1 className='' >CARHOUSE </h1>
+                <h1>All types of cars</h1>
             </div>
 
             <div id='services-container' className='d-flex justify-content-around align-items-center p-3 mt-5 mb-5'>

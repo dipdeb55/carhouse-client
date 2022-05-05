@@ -39,7 +39,6 @@ const Update = () => {
                 console.log(data)
                 setCar(updateQuantity);
                 alert('item delivered')
-
             })
         // console.log(stringQuantity)
     }
