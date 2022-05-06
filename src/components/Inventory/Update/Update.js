@@ -16,15 +16,14 @@ const Update = () => {
             .then(data => setCar(data))
     }, [])
 
-
     const handleDelivered = () => {
 
         const newQuantity = parseInt(car.quantity) - 1;
-        const stringQuantity = `${newQuantity}`
-        // const stringQuantity = newQuantity.toString()
+        const stringQuantity = newQuantity.toString()
         const updateQuantity = { ...car, quantity: stringQuantity }
 
-        console.log(JSON.stringify(updateQuantity))
+        // console.log(JSON.stringify(updateQuantity))
+        // console.log(updateQuantity)
 
         fetch(`http://localhost:5000/cars/${id}`, {
             method: 'PUT',
@@ -40,7 +39,32 @@ const Update = () => {
                 setCar(updateQuantity);
                 alert('item delivered')
             })
-        // console.log(stringQuantity)
+
+    }
+
+    const handleRestock = (e) => {
+        e.preventDefault()
+        const quantityValue = e.target.number.value;
+        // const addedQuantity = { stockQuantity }
+        const restockQuantity = parseInt(car.quantity) + parseInt(quantityValue);
+        const newrestockQuantity = { ...car, quantity: restockQuantity }
+
+        console.log(newrestockQuantity)
+
+
+        fetch(`http://localhost:5000/cars/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newrestockQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setCar(newrestockQuantity)
+                alert('another car added')
+            })
     }
 
     return (
@@ -65,20 +89,13 @@ const Update = () => {
                     </Card.Body>
                 </Card>
 
-
-                <Form className='w-25 mx-auto'>
+                <Form onSubmit={handleRestock} className='w-25 mx-auto'>
                     <h3 className='mb-4'>ReStock</h3>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-
-                        <Form.Control type="text" placeholder="Car Name" />
-                    </Form.Group>
-
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-
-                        <Form.Control type="number" placeholder="Quantity" />
+                        <Form.Control type="text" name="number" placeholder="Quantity" />
                     </Form.Group>
                     <Button variant="primary" type="submit">
-                        Submit
+                        ReStock
                     </Button>
                 </Form>
             </div>

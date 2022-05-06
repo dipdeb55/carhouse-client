@@ -41,7 +41,7 @@ const Home = () => {
                     <p><small className='ms-3 '>Sell your vehicles hassle free today. Simply enter your registration number to get started - We also don't charge Admin fees like other dealers!</small></p>
                     <div class="input-group mb-3 ms-3">
                         <input type="text" class="form-control" placeholder="" aria-label="Recipient's username" aria-describedby="button-addon2" />
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                        <button class="btn btn-outline-secondary" type="button" placeholder="Enter your id" id="button-addon2">Register</button>
                     </div>
                 </div>
                 <div>

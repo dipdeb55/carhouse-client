@@ -12,7 +12,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const email = user?.email;
-        fetch(`http://localhost:5000/cars/myitems?=${email}`)
+        fetch(`http://localhost:5000/cars/myitems?email=${email}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [user])
@@ -32,7 +32,7 @@ const MyItems = () => {
                         <Card.Text>
                             {car.description}
                         </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="primary">Delete</Button>
                     </Card.Body>
                 </Card>)
             }
