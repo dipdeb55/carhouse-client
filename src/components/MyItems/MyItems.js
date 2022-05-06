@@ -21,21 +21,23 @@ const MyItems = () => {
         console.log(user)
     }
     return (
-        <div className='card-container'>
-            <h2>{user?.email} Items</h2>
-            <h3>Cars {cars.length}</h3>
-            {
-                cars.map(car => <Card className='mx-auto' style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={car.image} />
-                    <Card.Body>
-                        <Card.Title>{car.name}</Card.Title>
-                        <Card.Text>
-                            {car.description}
-                        </Card.Text>
-                        <Button variant="primary">Delete</Button>
-                    </Card.Body>
-                </Card>)
-            }
+        <div>
+            <h2>Your Cars</h2>
+            <h3>Total:{cars.length}</h3>
+            <div className='card-container'>
+                {
+                    cars.map(car => <Card className='mx-auto' style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={car.image} />
+                        <Card.Body>
+                            <Card.Title>{car.name}</Card.Title>
+                            <Card.Text>
+                                {car.description}
+                            </Card.Text>
+                            <Button variant="primary">Delete</Button>
+                        </Card.Body>
+                    </Card>)
+                }
+            </div>
         </div>
     );
 };

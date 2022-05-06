@@ -20,7 +20,7 @@ const Home = () => {
                     <p>We ensure you to get best service from us.</p>
                 </div>
                 <div>
-                    <h5>Cars We have</h5>
+                    <h5>Search Inventory</h5>
                     <img className='w-25' src={'https://i.ibb.co/XSyc9R2/1076744.png'} alt="" />
                     <p>In our warehouse we have more than 300 cars.</p>
                 </div>
