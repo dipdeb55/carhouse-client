@@ -26,7 +26,6 @@ const SignUp = () => {
         setPassword(e.target.value)
     }
 
-
     const handleCreateUser = e => {
         e.preventDefault()
 
@@ -39,6 +38,10 @@ const SignUp = () => {
 
     const navigateLogin = () => {
         navigate('/login')
+    }
+
+    if (user) {
+        navigate('/')
     }
 
     return (
