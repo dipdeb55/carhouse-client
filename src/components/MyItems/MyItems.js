@@ -1,10 +1,10 @@
-import axios from 'axios';
 import './Myitems.css';
 import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import useCars from '../Hooks/useCars/useCars';
+import { MdDelete } from "react-icons/md";
+
 
 const MyItems = () => {
     const [user] = useAuthState(auth)
@@ -16,6 +16,23 @@ const MyItems = () => {
             .then(res => res.json())
             .then(data => setCars(data))
     }, [user])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('You want to DELETE');
+        if (proceed) {
+            const url = `http://localhost:5000/cars/${id}`
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaining = cars.filter(car => car._id !== id);
+                        setCars(remaining)
+                    }
+                })
+        }
+    }
 
     if (user) {
         console.log(user)
@@ -33,7 +50,7 @@ const MyItems = () => {
                             <Card.Text>
                                 {car.description}
                             </Card.Text>
-                            <Button variant="primary">Delete</Button>
+                            <Button onClick={() => handleDelete(car._id)} className='text-decoration-none' variant="primary"> <MdDelete></MdDelete>  Delete</Button>
                         </Card.Body>
                     </Card>)
                 }

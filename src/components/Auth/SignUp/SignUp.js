@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 
 
@@ -26,9 +26,6 @@ const SignUp = () => {
         setPassword(e.target.value)
     }
 
-    if (user) {
-        navigate('/')
-    }
 
     const handleCreateUser = e => {
         e.preventDefault()
@@ -40,6 +37,9 @@ const SignUp = () => {
         createUserWithEmailAndPassword(email, password);
     }
 
+    const navigateLogin = () => {
+        navigate('/login')
+    }
 
     return (
         <div>
@@ -59,6 +59,7 @@ const SignUp = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     {error?.password && <p className="text-danger">{error.password}</p>}
                 </Form.Group>
+                <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
                 <p className='text-danger'>{error}</p>
                 <Button variant="primary" onClick={() => createUserWithEmailAndPassword(email, password)} type="submit">
                     Submit
