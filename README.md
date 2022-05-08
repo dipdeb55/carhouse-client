@@ -1,28 +1,19 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CARHOUSE
 
-## Available Scripts
 
-In the project directory, you can run:
+Click here to visit the website [https://assignment-11-2488d.web.app](https://assignment-11-2488d.web.app)
 
-### `npm start`
+In this website you can manage you car inventory. There are few option such as add a car or update the specific car also you can remove car from the inventory.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Features
+- In this website you have home page,inventory page,Manage Inventory page and add car page etc.
+- when you enter the inventory page you can see cars from our warehouse.
+- There is an update button in the inventory page by click on that you can update the specific car.
+- You also see add car page here you can add car to the warehouse.
+- In the manage inventory page you can remove the car which is no more in the stock .
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
