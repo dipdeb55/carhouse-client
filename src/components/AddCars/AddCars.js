@@ -20,7 +20,7 @@ const AddCars = () => {
 
         const cars = { name, image, description, supplierName, price, sold, quantity, email };
 
-        fetch('http://localhost:5000/cars', {
+        fetch('https://rocky-refuge-71424.herokuapp.com/cars', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

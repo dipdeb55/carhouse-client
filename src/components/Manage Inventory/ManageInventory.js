@@ -12,7 +12,7 @@ const ManageInventory = () => {
     const handleDelete = id => {
         const proceed = window.confirm('You want to DELETE');
         if (proceed) {
-            const url = `http://localhost:5000/cars/${id}`
+            const url = `https://rocky-refuge-71424.herokuapp.com/cars/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
@@ -36,7 +36,7 @@ const ManageInventory = () => {
             <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th>Picture</th>
                         <th>Name</th>
                         <th>Price</th>
                         <th>Supplier</th>

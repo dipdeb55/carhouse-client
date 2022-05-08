@@ -12,7 +12,7 @@ const MyItems = () => {
 
     useEffect(() => {
         const email = user?.email;
-        fetch(`http://localhost:5000/cars/myitems?email=${email}`)
+        fetch(`https://rocky-refuge-71424.herokuapp.com/cars/myitems?email=${email}`)
             .then(res => res.json())
             .then(data => setCars(data))
     }, [user])
@@ -20,7 +20,7 @@ const MyItems = () => {
     const handleDelete = id => {
         const proceed = window.confirm('You want to DELETE');
         if (proceed) {
-            const url = `http://localhost:5000/cars/${id}`
+            const url = `https://rocky-refuge-71424.herokuapp.com/cars/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

@@ -20,9 +20,9 @@ const Footer = () => {
                         <ul class="nav col-md-4 justify-content-start ps-3 m-3">
                             <p>Get Help</p>
                             <li><small>24/7 Call Service</small></li>
-                            <li><small>Any time training</small> </li>
-                            <li><small>Diet for your body</small></li>
-                            <li><small>Get motivation</small></li>
+                            <li><small>Replacement</small> </li>
+                            <li><small>1 Month Free repair</small></li>
+                            <li><small>Modification</small></li>
                         </ul>
                     </div>
                     <div style={{ gap: "10px" }} className="d-flex m-5 p-3">

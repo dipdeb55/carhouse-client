@@ -11,7 +11,7 @@ const Update = () => {
     // const { quantity } = car;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/cars/${id}`)
+        fetch(`https://rocky-refuge-71424.herokuapp.com/cars/${id}`)
             .then(res => res.json())
             .then(data => setCar(data))
     }, [])
@@ -25,7 +25,7 @@ const Update = () => {
         // console.log(JSON.stringify(updateQuantity))
         // console.log(updateQuantity)
 
-        fetch(`http://localhost:5000/cars/${id}`, {
+        fetch(`https://rocky-refuge-71424.herokuapp.com/cars/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -52,7 +52,7 @@ const Update = () => {
         console.log(newrestockQuantity)
 
 
-        fetch(`http://localhost:5000/cars/${id}`, {
+        fetch(`https://rocky-refuge-71424.herokuapp.com/cars/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
