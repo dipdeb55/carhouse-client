@@ -40,7 +40,7 @@ const ManageInventory = () => {
                         <th>Name</th>
                         <th>Price</th>
                         <th>Supplier</th>
-                        <th>Sold</th>
+                        <th>Quantity</th>
                         <th><MdDelete></MdDelete></th>
                     </tr>
                 </thead>
@@ -52,7 +52,7 @@ const ManageInventory = () => {
                                 <td>{car.name}</td>
                                 <td>{car.price}</td>
                                 <td>{car.supplierName}</td>
-                                <td>{car.sold}</td>
+                                <td>{car.quantity}</td>
                                 <td><Button onClick={() => handleDelete(car._id)} className='text-decoration-none' variant="link"> <MdDelete></MdDelete>  Delete</Button></td>
                             </tr>
                         })
